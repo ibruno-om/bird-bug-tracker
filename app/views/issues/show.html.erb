@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @issue.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @issue.description %>
+</p>
+
+<p>
+  <strong>Visibility:</strong>
+  <%= @issue.visibility %>
+</p>
+
+<p>
+  <strong>Submited date:</strong>
+  <%= @issue.submited_date %>
+</p>
+
+<p>
+  <strong>Additional information:</strong>
+  <%= @issue.additional_information %>
+</p>
+
+<p>
+  <strong>Product version:</strong>
+  <%= @issue.product_version %>
+</p>
+
+<%= link_to 'Edit', edit_issue_path(@issue) %> |
+<%= link_to 'Back', issues_path %>

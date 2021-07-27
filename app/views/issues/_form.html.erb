@@ -1,0 +1,47 @@
+<%= form_with(model: issue) do |form| %>
+  <% if issue.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(issue.errors.count, "error") %> prohibited this issue from being saved:</h2>
+
+      <ul>
+        <% issue.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :visibility %>
+    <%= form.number_field :visibility %>
+  </div>
+
+  <div class="field">
+    <%= form.label :submited_date %>
+    <%= form.datetime_select :submited_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :additional_information %>
+    <%= form.text_area :additional_information %>
+  </div>
+
+  <div class="field">
+    <%= form.label :product_version %>
+    <%= form.text_field :product_version %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
