@@ -9,4 +9,8 @@ RSpec.describe Issue, type: :model do
     it { is_expected.to validate_presence_of(:visibility) }
     it { is_expected.to validate_presence_of(:submited_date) }
   end
+
+  describe 'Associations' do
+    it { is_expected.to belong_to(:status) }
+  end
 end
