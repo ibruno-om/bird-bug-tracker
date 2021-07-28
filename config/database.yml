@@ -20,7 +20,7 @@ default: &default
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: notes
+  username: bbt
   password: <%= ENV['BBT_DATABASE_PASSWORD'] %>
 
 development:
@@ -31,7 +31,7 @@ development:
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
   # the same name as the operating system user running Rails.
-  #username: notes
+  #username: bbt
 
   # The password associated with the postgres role (username).
   #password:
@@ -84,6 +84,6 @@ test:
 production:
   <<: *default
   database: bbt_production
-  username: notes
+  username: bbt
   password: <%= ENV['BBT_DATABASE_PASSWORD'] %>
 
