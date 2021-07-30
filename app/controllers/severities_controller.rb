@@ -1,0 +1,2 @@
+class SeveritiesController < ApplicationController
+end
