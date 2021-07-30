@@ -13,5 +13,6 @@ RSpec.describe Issue, type: :model do
   describe 'Associations' do
     it { is_expected.to belong_to(:status) }
     it { is_expected.to belong_to(:priority) }
+    it { is_expected.to belong_to(:severity) }
   end
 end
