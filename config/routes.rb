@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :reproducibilities
   resources :severities
   resources :priorities
   resources :statuses
