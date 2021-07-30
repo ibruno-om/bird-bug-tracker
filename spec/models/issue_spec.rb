@@ -14,5 +14,6 @@ RSpec.describe Issue, type: :model do
     it { is_expected.to belong_to(:status) }
     it { is_expected.to belong_to(:priority) }
     it { is_expected.to belong_to(:severity) }
+    it { is_expected.to belong_to(:reproducibility) }
   end
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_30_151202) do
+ActiveRecord::Schema.define(version: 2021_07_30_153452) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,12 +27,20 @@ ActiveRecord::Schema.define(version: 2021_07_30_151202) do
     t.bigint "status_id", null: false
     t.bigint "priority_id", null: false
     t.bigint "severity_id", null: false
+    t.bigint "reproducibility_id", null: false
     t.index ["priority_id"], name: "index_issues_on_priority_id"
+    t.index ["reproducibility_id"], name: "index_issues_on_reproducibility_id"
     t.index ["severity_id"], name: "index_issues_on_severity_id"
     t.index ["status_id"], name: "index_issues_on_status_id"
   end
 
   create_table "priorities", force: :cascade do |t|
+    t.string "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "reproducibilities", force: :cascade do |t|
     t.string "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -51,6 +59,7 @@ ActiveRecord::Schema.define(version: 2021_07_30_151202) do
   end
 
   add_foreign_key "issues", "priorities"
+  add_foreign_key "issues", "reproducibilities"
   add_foreign_key "issues", "severities"
   add_foreign_key "issues", "statuses"
 end

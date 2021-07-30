@@ -1,0 +1,2 @@
+class ReproducibilitiesController < ApplicationController
+end
