@@ -15,5 +15,7 @@ RSpec.describe Issue, type: :model do
     it { is_expected.to belong_to(:priority) }
     it { is_expected.to belong_to(:severity) }
     it { is_expected.to belong_to(:reproducibility) }
+    it { is_expected.to belong_to(:creator_user) }
+    it { is_expected.to belong_to(:assigned_user).optional }
   end
 end
