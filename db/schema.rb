@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_04_214502) do
+ActiveRecord::Schema.define(version: 2021_08_04_215510) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,6 +35,8 @@ ActiveRecord::Schema.define(version: 2021_08_04_214502) do
     t.bigint "severity_id", null: false
     t.bigint "reproducibility_id", null: false
     t.bigint "creator_user_id", null: false
+    t.bigint "assigned_user_id"
+    t.index ["assigned_user_id"], name: "index_issues_on_assigned_user_id"
     t.index ["creator_user_id"], name: "index_issues_on_creator_user_id"
     t.index ["priority_id"], name: "index_issues_on_priority_id"
     t.index ["reproducibility_id"], name: "index_issues_on_reproducibility_id"
@@ -90,6 +92,7 @@ ActiveRecord::Schema.define(version: 2021_08_04_214502) do
   add_foreign_key "issues", "reproducibilities"
   add_foreign_key "issues", "severities"
   add_foreign_key "issues", "statuses"
+  add_foreign_key "issues", "users", column: "assigned_user_id"
   add_foreign_key "issues", "users", column: "creator_user_id"
   add_foreign_key "users", "access_levels"
 end
