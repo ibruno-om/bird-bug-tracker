@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :access_levels
   devise_for :users
   resources :reproducibilities
   resources :severities
