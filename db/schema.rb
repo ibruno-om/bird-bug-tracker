@@ -10,12 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_04_215510) do
+ActiveRecord::Schema.define(version: 2021_08_05_170443) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "access_levels", force: :cascade do |t|
+    t.string "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "categories", force: :cascade do |t|
     t.string "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -36,7 +42,9 @@ ActiveRecord::Schema.define(version: 2021_08_04_215510) do
     t.bigint "reproducibility_id", null: false
     t.bigint "creator_user_id", null: false
     t.bigint "assigned_user_id"
+    t.bigint "category_id", null: false
     t.index ["assigned_user_id"], name: "index_issues_on_assigned_user_id"
+    t.index ["category_id"], name: "index_issues_on_category_id"
     t.index ["creator_user_id"], name: "index_issues_on_creator_user_id"
     t.index ["priority_id"], name: "index_issues_on_priority_id"
     t.index ["reproducibility_id"], name: "index_issues_on_reproducibility_id"
@@ -88,6 +96,7 @@ ActiveRecord::Schema.define(version: 2021_08_04_215510) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "issues", "categories"
   add_foreign_key "issues", "priorities"
   add_foreign_key "issues", "reproducibilities"
   add_foreign_key "issues", "severities"
