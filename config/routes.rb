@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :projects
   resources :categories
   resources :access_levels
   devise_for :users
