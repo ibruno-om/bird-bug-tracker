@@ -8,5 +8,7 @@ class User < ApplicationRecord
 
   belongs_to :access_level
 
+  has_and_belongs_to_many :projects
+
   validates :name, :email, :encrypted_password, presence: true
 end
