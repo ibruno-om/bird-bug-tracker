@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_09_222215) do
+ActiveRecord::Schema.define(version: 2021_08_09_224652) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,6 +56,17 @@ ActiveRecord::Schema.define(version: 2021_08_09_222215) do
     t.string "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "project_categories", force: :cascade do |t|
+    t.bigint "project_id", null: false
+    t.bigint "category_id", null: false
+    t.bigint "assigned_user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["assigned_user_id"], name: "index_project_categories_on_assigned_user_id"
+    t.index ["category_id"], name: "index_project_categories_on_category_id"
+    t.index ["project_id"], name: "index_project_categories_on_project_id"
   end
 
   create_table "projects", force: :cascade do |t|
@@ -119,5 +130,8 @@ ActiveRecord::Schema.define(version: 2021_08_09_222215) do
   add_foreign_key "issues", "statuses"
   add_foreign_key "issues", "users", column: "assigned_user_id"
   add_foreign_key "issues", "users", column: "creator_user_id"
+  add_foreign_key "project_categories", "categories"
+  add_foreign_key "project_categories", "projects"
+  add_foreign_key "project_categories", "users", column: "assigned_user_id"
   add_foreign_key "users", "access_levels"
 end
