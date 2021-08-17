@@ -1,4 +1,8 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
+  root 'issues#index'
+
   resources :projects
   resources :categories
   resources :access_levels
