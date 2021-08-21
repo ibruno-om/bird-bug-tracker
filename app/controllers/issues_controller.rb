@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class IssuesController < ApplicationController
   before_action :set_issue, only: %i[ show edit update destroy ]
 
@@ -64,6 +66,7 @@ class IssuesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def issue_params
-      params.require(:issue).permit(:title, :description, :visibility, :submited_date, :additional_information, :product_version)
+      params.require(:issue).permit(:title, :description, :visibility, :submited_date, :additional_information, :product_version, :status_id, :priority_id, :severity_id, :reproducibility_id, :category_id, :creator_user_id, :assigned_user_id )
     end
 end
+

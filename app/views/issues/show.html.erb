@@ -30,5 +30,40 @@
   <%= @issue.product_version %>
 </p>
 
+<p>
+  <strong>Creator User:</strong>
+  <%= @issue.creator_user.name %>
+</p>
+
+<p>
+  <strong>Assigned User:</strong>
+  <%= @issue.assigned_user.name if @issue.assigned_user %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @issue.status.description %>
+</p>
+
+<p>
+  <strong>Priority:</strong>
+  <%= @issue.priority.description %>
+</p>
+
+<p>
+  <strong>Severity:</strong>
+  <%= @issue.severity.description %>
+</p>
+
+<p>
+  <strong>Reproducibility:</strong>
+  <%= @issue.reproducibility.description %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @issue.category.description %>
+</p>
+
 <%= link_to 'Edit', edit_issue_path(@issue) %> |
 <%= link_to 'Back', issues_path %>
