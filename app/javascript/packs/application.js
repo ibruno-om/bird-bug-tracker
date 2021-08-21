@@ -20,3 +20,6 @@ require('admin-lte');
 document.addEventListener("turbolinks:load", () => {
   $('[data-toggle="tooltip"]').tooltip()
 });
+
+window.jQuery = $;
+window.$ = $;
