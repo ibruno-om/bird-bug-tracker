@@ -30,4 +30,14 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  buttons:
+    show: Show
+    edit: Edit
+    destroy: Destroy
+    new: New
+    new_model: New %{model}
+    save: Save
+  others:
+    actions: Actions
+    editing: Editing
+

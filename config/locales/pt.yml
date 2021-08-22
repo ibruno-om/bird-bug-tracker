@@ -1,0 +1,11 @@
+pt:
+  buttons:
+    show: Visualizar
+    edit: Editar
+    destroy: Deletar
+    new: Novo
+    new_model: Novo %{model}
+    save: Salvar
+  others:
+    actions: Ações
+    editing: Editando

@@ -14,74 +14,81 @@
       <% end %>
 
       <div class="form-group">
-        <%= form.label :title %>
+        <%= form.label t('issues.title') %>
         <%= form.text_field :title, class: "form-control" %>
       </div>
 
       <div class="form-group">
-        <%= form.label :description %>
+        <%= form.label t('issues.description') %>
         <%= form.text_area :description, class: "form-control" %>
       </div>
 
+    <select class="form-select" aria-label="Default select example">
+      <option selected>Open this select menu</option>
+      <option value="1">One</option>
+      <option value="2">Two</option>
+      <option value="3">Three</option>
+    </select>
+
       <div class="form-group">
-        <%= form.label :visibility %>
-        <%= form.select :visibility, [["Public", 0], ["Private", 1]], class: "form-control" %>
+        <%= form.label t('issues.visibility') %>
+        <%= form.select :visibility, [["Public", 0], ["Private", 1]], { :class => "form-select" } %>
       </div>
 
       <div class="form-group">
-        <%= form.label :submited_date %>
+        <%= form.label t('issues.submited_date') %>
         <%= form.date_field  :submited_date, class: "form-control" %>
       </div>
 
       <div class="form-group">
-        <%= form.label :additional_information %>
+        <%= form.label t('issues.additional_information') %>
         <%= form.text_area :additional_information, class: "form-control" %>
       </div>
 
       <div class="form-group">
-        <%= form.label :product_version %>
+        <%= form.label t('issues.product_version') %>
         <%= form.text_field :product_version, class: "form-control" %>
       </div>
 
       <div class="form-group">
-        <%= form.label :creator_user %>
+        <%= form.label t('issues.creator_user') %>
         <%= form.collection_select :creator_user_id, User.order(:name), :id, :name %>
       </div>
 
       <div class="form-group">
-        <%= form.label :assigned_user %>
+        <%= form.label t('issues.assigned_user') %>
         <%= form.collection_select :assigned_user_id, User.order(:name), :id, :name, :include_blank => true %>
       </div>
 
       <div class="form-group">
-        <%= form.label :status %>
+        <%= form.label t('issues.status') %>
         <%= form.collection_select :status_id, Status.order(:id), :id, :description %>
       </div>
 
       <div class="form-group">
-        <%= form.label :priority %>
+        <%= form.label t('issues.priority') %>
         <%= form.collection_select :priority_id, Priority.order(:id), :id, :description %>
       </div>
 
       <div class="form-group">
-        <%= form.label :severity %>
+        <%= form.label t('issues.severity') %>
         <%= form.collection_select :severity_id, Severity.order(:id), :id, :description %>
       </div>
       
       <div class="form-group">
-        <%= form.label :reproducibility %>
+        <%= form.label t('issues.reproducibility') %>
         <%= form.collection_select :reproducibility_id, Reproducibility.order(:id), :id, :description %>
       </div>
 
       <div class="form-group">
-        <%= form.label :category %>
+        <%= form.label t('issues.category') %>
         <%= form.collection_select :category_id, Category.order(:id), :id, :description %>
       </div>
       
-
-      <div class="card-footer">
-        <%= form.submit 'Salvar', class: "btn btn-primary" %>
+      <div class="form-group">
+        <%= form.submit t('buttons.save') , class: "btn btn-primary" %>
       </div>
+
     </div>
   <% end %>
 </div>
