@@ -1,6 +1,6 @@
 <div class="card card-primary">
   <%= form_with(model: issue) do |form| %>
-    <div class="card-body">
+    <div class="card-body">    
       <% if issue.errors.any? %>
         <div id="error_explanation">
           <h2><%= pluralize(issue.errors.count, "error") %> prohibited this issue from being saved:</h2>
@@ -13,26 +13,36 @@
         </div>
       <% end %>
 
-      <div class="form-group">
-        <%= form.label t('issues.title') %>
-        <%= form.text_field :title, class: "form-control" %>
-      </div>
+      <div class="row">
+        
+          <div class="form-group col-md-6">
+            <%= form.label t('issues.title') %>
+            <%= form.text_field :title, class: "form-control" %>
+          </div>
+        
+        
 
-      <div class="form-group">
-        <%= form.label t('issues.description') %>
-        <%= form.text_area :description, class: "form-control" %>
+        <div class="form-group col-md-6">
+          <%= form.label t('issues.description') %>
+          <%= form.text_area :description, class: "form-control" %>
+        </div>
       </div>
+      
 
-    <select class="form-select" aria-label="Default select example">
-      <option selected>Open this select menu</option>
-      <option value="1">One</option>
-      <option value="2">Two</option>
-      <option value="3">Three</option>
-    </select>
+      
+      <div class="form-group">
+        <select class="custom-select" aria-label="Default select example">
+          <option selected>Open this select menu</option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </select>
+      </div>
+    
 
       <div class="form-group">
         <%= form.label t('issues.visibility') %>
-        <%= form.select :visibility, [["Public", 0], ["Private", 1]], { :class => "form-select" } %>
+        <%= form.select :visibility, [["Public", 0], ["Private", 1]], {}, { class: "form-control" } %>
       </div>
 
       <div class="form-group">
