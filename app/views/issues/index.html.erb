@@ -34,25 +34,16 @@
 
               <td>
                 <div class="text-center">
-                  <%= link_to issue do %>
-                    <button class="btn btn-outline-secondary btn-sm" >
-                      <span class="fa fa-search">
-                      </span>
-                    </button>
+                  <%= link_to issue, class: "btn btn-outline-secondary btn-sm" do %>                    
+                      <span class="fa fa-search" />                      
                   <% end %>
 
-                  <%= link_to edit_issue_path(issue)  do %>
-                    <button class="btn btn-outline-secondary btn-sm" >
-                      <span class="fa fa-pen">
-                      </span>
-                    </button>
+                  <%= link_to edit_issue_path(issue), class: "btn btn-outline-secondary btn-sm" do %>                    
+                      <span class="fa fa-pen" />
                   <% end %>
 
-                  <%= link_to issue, method: :delete, data: { confirm: 'Are you sure?' } do %>
-                    <button class="btn btn-outline-secondary btn-sm" >
-                      <span class="fa fa-trash">
-                      </span>
-                    </button>
+                  <%= link_to issue, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-secondary btn-sm" do %>
+                      <span class="fa fa-trash" />                         
                   <% end %>
                 </div>
               </td>
