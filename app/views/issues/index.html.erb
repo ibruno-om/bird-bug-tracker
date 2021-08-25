@@ -30,7 +30,7 @@
               <td><%= issue.category.description %></td>
               <td><%= issue.severity.description %></td>
               <td><%= issue.status.description %></td>              
-              <td><%= issue.submited_date.strftime("%d/%m/%Y %T") %></td>
+              <td><%= l(issue.submited_date) %></td>
 
               <td>
                 <div class="text-center">
