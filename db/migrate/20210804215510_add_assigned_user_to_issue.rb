@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class AddAssignedUserToIssue < ActiveRecord::Migration[6.1]
   def change
     add_reference :issues, :assigned_user, references: :users

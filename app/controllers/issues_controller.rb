@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class IssuesController < ApplicationController
-  before_action :set_issue, only: %i[ show edit update destroy ]
+  before_action :set_issue, only: %i[show edit update destroy]
 
   # GET /issues or /issues.json
   def index
@@ -9,8 +9,7 @@ class IssuesController < ApplicationController
   end
 
   # GET /issues/1 or /issues/1.json
-  def show
-  end
+  def show; end
 
   # GET /issues/new
   def new
@@ -18,8 +17,7 @@ class IssuesController < ApplicationController
   end
 
   # GET /issues/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /issues or /issues.json
   def create
@@ -28,7 +26,7 @@ class IssuesController < ApplicationController
 
     respond_to do |format|
       if @issue.save
-        format.html { redirect_to @issue, notice: "Issue was successfully created." }
+        format.html { redirect_to @issue, notice: 'Issue was successfully created.' }
         format.json { render :show, status: :created, location: @issue }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -41,7 +39,7 @@ class IssuesController < ApplicationController
   def update
     respond_to do |format|
       if @issue.update(issue_params)
-        format.html { redirect_to @issue, notice: "Issue was successfully updated." }
+        format.html { redirect_to @issue, notice: 'Issue was successfully updated.' }
         format.json { render :show, status: :ok, location: @issue }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -54,12 +52,13 @@ class IssuesController < ApplicationController
   def destroy
     @issue.destroy
     respond_to do |format|
-      format.html { redirect_to issues_url, notice: "Issue was successfully destroyed." }
+      format.html { redirect_to issues_url, notice: 'Issue was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
+
   # Use callbacks to share common setup or constraints between actions.
   def set_issue
     @issue = Issue.find(params[:id])
@@ -67,6 +66,9 @@ class IssuesController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def issue_params
-    params.require(:issue).permit(:title, :description, :visibility, :submited_date, :additional_information, :product_version, :status_id, :priority_id, :severity_id, :reproducibility_id, :category_id, :creator_user_id, :assigned_user_id )
+    params.require(:issue).permit(:title, :description, :visibility,
+                                  :submited_date, :additional_information,
+                                  :product_version, :status_id, :priority_id, :severity_id,
+                                  :reproducibility_id, :category_id, :creator_user_id, :assigned_user_id)
   end
 end

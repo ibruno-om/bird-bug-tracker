@@ -1,17 +1,19 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
-RSpec.describe "issues/show", type: :view do
+RSpec.describe 'issues/show', type: :view do
   before(:each) do
     @issue = assign(:issue, Issue.create!(
-      title: "Title",
-      description: "MyText",
-      visibility: 2,
-      additional_information: "MyText",
-      product_version: "Product Version"
-    ))
+                              title: 'Title',
+                              description: 'MyText',
+                              visibility: 2,
+                              additional_information: 'MyText',
+                              product_version: 'Product Version'
+                            ))
   end
 
-  it "renders attributes in <p>" do
+  it 'renders attributes in <p>' do
     render
     expect(rendered).to match(/Title/)
     expect(rendered).to match(/MyText/)

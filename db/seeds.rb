@@ -18,13 +18,13 @@
 # Priority.create(description: 'Normal')
 # Priority.create(description: 'Alta')
 
-# Severity.create(description: 'Mínimo')
+# Severity.create(description: 'Minimo')
 # Severity.create(description: 'Pequeno')
 # Severity.create(description: 'Grande')
 
 # Reproducibility.create(description: 'Sempre')
 # Reproducibility.create(description: 'As Vezes')
-# Reproducibility.create(description: 'Aleatório')
+# Reproducibility.create(description: 'Aleatorio')
 
 # Category.create(description: 'Sistema WEB')
 # Category.create(description: 'Sistema DESKTOP')
