@@ -1,0 +1,16 @@
+pt:
+  issues:
+    model_name: Caso
+    title: Titulo
+    description: Descrição
+    visibility: Visibilidade
+    submited_date: Data de Criação
+    additional_information: Informações Adicionais
+    product_version: Versão do produto
+    status: Status
+    priority: Prioridade
+    severity: Gravidade
+    reproducibility: Frequencia
+    category: Categoria
+    creator_user: Usuário Criador
+    assigned_user: Usuário Atribuido

@@ -1,23 +1,22 @@
 <p id="notice"><%= notice %></p>
 
-<% content_for :title, @issues.model_name %>
+<% content_for :title, t('issues.model_name') %>
 
 <div class="dataTables_wrapper dt-bootstrap4">  
   <div calss="row">
-    <div calss="col-sm-12">
-      
+    <div calss="col-sm-12">      
       <table id="issue_table" class="table table-bordered table-striped dtr-inline" role="grid">
         <thead>
           <tr role="row">
-            <th>#</th>
-            <th class="sorting">Creator User</th>
-            <th class="sorting">Assigned User</th>
-            <th class="sorting">Category</th>
-            <th class="sorting">Severity</th>
-            <th class="sorting">Status</th>
-            <th class="sorting">Title</th>
-            <th class="sorting">Submited date</th>
-            <th class="sorting" colspan="3">Actions</th>
+            <th width="3%">#</th>
+            <th class="sorting"> <%= t('issues.title') %> </th>
+            <th class="sorting" width="10%"> <%= t('issues.creator_user') %> </th>
+            <th class="sorting" width="10%"> <%= t('issues.assigned_user') %> </th>
+            <th class="sorting" width="10%"> <%= t('issues.category') %> </th>
+            <th class="sorting" width="10%"> <%= t('issues.severity') %> </th>
+            <th class="sorting" width="10%"> <%= t('issues.status') %> </th>            
+            <th class="sorting text-center" width="11%"> <%= t('issues.submited_date') %> </th>
+            <th class="text-center" width="10%"> <%= t('others.actions') %> </th>
           </tr>
         </thead>
 
@@ -25,16 +24,30 @@
           <% @issues.each do |issue| %>
             <tr>
               <td><%= issue.id %></td>
+              <td><%= issue.title %></td>
               <td><%= issue.creator_user.name %></td>
               <td><%= issue.assigned_user.name if issue.assigned_user %></td>
               <td><%= issue.category.description %></td>
               <td><%= issue.severity.description %></td>
-              <td><%= issue.status.description %></td>
-              <td><%= issue.title %></td>
-              <td><%= issue.submited_date %></td>
-              <td><%= link_to 'Show', issue %></td>
-              <td><%= link_to 'Edit', edit_issue_path(issue) %></td>
-              <td><%= link_to 'Destroy', issue, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              <td><%= issue.status.description %></td>              
+              <td><%= l(issue.submited_date) %></td>
+
+              <td>
+                <div class="text-center">
+                  <%= link_to issue, class: "btn btn-outline-secondary btn-sm" do %>                    
+                      <span class="fa fa-search" />                      
+                  <% end %>
+
+                  <%= link_to edit_issue_path(issue), class: "btn btn-outline-secondary btn-sm" do %>                    
+                      <span class="fa fa-pen" />
+                  <% end %>
+
+                  <%= link_to issue, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-secondary btn-sm" do %>
+                      <span class="fa fa-trash" />                         
+                  <% end %>
+                </div>
+              </td>
+              
             </tr>
           <% end %>
         </tbody>
@@ -43,5 +56,7 @@
   </div>
 </div>
 
-<%= link_to 'New Issue', new_issue_path %>
-
+<div>
+  <%= link_to t('buttons.new') + ' ' + t('issues.model_name'), new_issue_path, class: "btn btn-primary"  %>
+</div>
+              

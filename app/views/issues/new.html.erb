@@ -1,5 +1,7 @@
-<h1>New Issue</h1>
+<h1> <%=t('others.creating') + ' ' + t('issues.model_name') %> </h1>
 
 <%= render 'form', issue: @issue %>
 
-<%= link_to 'Back', issues_path %>
+<div>
+  <%= link_to t('buttons.back') , issues_path %>
+</div>

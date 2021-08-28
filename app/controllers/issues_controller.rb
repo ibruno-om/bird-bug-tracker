@@ -24,6 +24,7 @@ class IssuesController < ApplicationController
   # POST /issues or /issues.json
   def create
     @issue = Issue.new(issue_params)
+    @issue.submited_date = DateTime.now
 
     respond_to do |format|
       if @issue.save
@@ -59,14 +60,13 @@ class IssuesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_issue
-      @issue = Issue.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_issue
+    @issue = Issue.find(params[:id])
+  end
 
-    # Only allow a list of trusted parameters through.
-    def issue_params
-      params.require(:issue).permit(:title, :description, :visibility, :submited_date, :additional_information, :product_version, :status_id, :priority_id, :severity_id, :reproducibility_id, :category_id, :creator_user_id, :assigned_user_id )
-    end
+  # Only allow a list of trusted parameters through.
+  def issue_params
+    params.require(:issue).permit(:title, :description, :visibility, :submited_date, :additional_information, :product_version, :status_id, :priority_id, :severity_id, :reproducibility_id, :category_id, :creator_user_id, :assigned_user_id )
+  end
 end
-
