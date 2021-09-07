@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<table class="table">
+  <tr>
+    <td colspan="5">
+      <b><%= t('categories.description') %>:</b>
+      <%= @category.description %>
+    </td>
+  </tr>
+</table>
+
+<div>
+  <%= link_to t('buttons.edit') , edit_category_path(@category)  %> |
+  <%= link_to t('buttons.back') , categories_path %>
+</div>
+
+<br/>

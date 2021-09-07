@@ -42,6 +42,8 @@ en:
     actions: Actions
     editing: Editing
     creating: Creating
+  sidebar_menu:
+    basic_tables: Basic Tables
   date:
     abbr_day_names:
     - Sun

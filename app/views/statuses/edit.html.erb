@@ -1,0 +1,11 @@
+<h1> <%= t('others.editing') + ' ' + t('statuses.model_name') %> </h1>
+
+<%= render 'form', status: @status %>
+
+<div>
+  <%= link_to t('buttons.show') , @status %> |
+  <%= link_to t('buttons.back') , statuses_path %>
+</div>
+
+<br/>
+

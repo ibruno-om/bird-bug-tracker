@@ -1,0 +1,29 @@
+<div class="card card-primary">
+  <%= form_with(model: category) do |form| %>
+    <div class="card-body">    
+      <% if category.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(category.errors.count, "error") %> prohibited this category from being saved:</h2>
+
+          <ul>
+            <% category.errors.each do |error| %>
+              <li><%= error.full_message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div class="row">
+        <div class="form-group col-md-12">
+          <%= form.label t('categories.description') %>
+          <%= form.text_area :description, class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= form.submit t('buttons.save') , class: "btn btn-primary" %>
+      </div>
+
+    </div>
+  <% end %>
+</div>

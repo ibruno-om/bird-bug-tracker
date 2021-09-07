@@ -1,0 +1,7 @@
+<h1> <%=t('others.creating') + ' ' + t('categories.model_name') %> </h1>
+
+<%= render 'form', category: @category %>
+
+<div>
+  <%= link_to t('buttons.back') , categories_path %>
+</div>

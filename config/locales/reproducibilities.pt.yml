@@ -1,0 +1,5 @@
+en:
+  reproducibilities:
+    model_name: Frequencia
+    description: Descrição
+    created_at: Data de Criação

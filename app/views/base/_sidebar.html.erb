@@ -1,6 +1,6 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="#" class="brand-link">
+    <a href="/" class="brand-link">
       <%= image_tag "logo.png", alt: "Bird Bug Tracker Logo", class: "brand-image img-circle elevation-3", style: "opacity: .8" %>      
       <span class="brand-text font-weight-light">AdminLTE 3</span>
     </a>
@@ -34,37 +34,72 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-          <li class="nav-item menu-open">
-            <a href="#" class="nav-link active">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
+          <li class="nav-item">
+            <a href="/issues" class="nav-link">
+              <i class="far fa-circle nav-icon"></i>
               <p>
-                Starter Pages
+                <%= t('issues.model_name') %>
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/projects" class="nav-link">
+              <i class="far fa-circle nav-icon"></i>
+              <p>
+                <%= t('projects.model_name') %>
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-table"></i>
+              <p>
+                <%= t('sidebar_menu.basic_tables') %>
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="#" class="nav-link active">
+                <a href="/statuses" class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Active Page</p>
+                  <p>
+                    <%= t('statuses.model_name') %>
+                  </p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="/severities" class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Inactive Page</p>
+                  <p>
+                    <%= t('severities.model_name') %>
+                  </p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/reproducibilities" class="nav-link active">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>
+                    <%= t('reproducibilities.model_name') %>
+                  </p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/priorities" class="nav-link active">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>
+                    <%= t('priorities.model_name') %>
+                  </p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/categories" class="nav-link active">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>
+                    <%= t('categories.model_name') %>
+                  </p>
                 </a>
               </li>
             </ul>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
-              <p>
-                Simple Link
-                <span class="right badge badge-danger">New</span>
-              </p>
-            </a>
           </li>
         </ul>
       </nav>

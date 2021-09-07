@@ -1,0 +1,5 @@
+en:
+  categories:
+    model_name: Categoria
+    description: Descrição
+    created_at: Data de Criação

@@ -1,0 +1,29 @@
+<div class="card card-primary">
+  <%= form_with(model: reproducibility) do |form| %>
+    <div class="card-body">    
+      <% if reproducibility.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(reproducibility.errors.count, "error") %> prohibited this reproducibility from being saved:</h2>
+
+          <ul>
+            <% reproducibility.errors.each do |error| %>
+              <li><%= error.full_message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div class="row">
+        <div class="form-group col-md-12">
+          <%= form.label t('reproducibilities.description') %>
+          <%= form.text_area :description, class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= form.submit t('buttons.save') , class: "btn btn-primary" %>
+      </div>
+
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,11 @@
+<h1> <%= t('others.editing') + ' ' + t('reproducibilities.model_name') %> </h1>
+
+<%= render 'form', reproducibility: @reproducibility %>
+
+<div>
+  <%= link_to t('buttons.show') , @reproducibility %> |
+  <%= link_to t('buttons.back') , reproducibilities_path %>
+</div>
+
+<br/>
+

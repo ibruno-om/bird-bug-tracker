@@ -1,0 +1,11 @@
+<h1> <%= t('others.editing') + ' ' + t('severities.model_name') %> </h1>
+
+<%= render 'form', severity: @severity %>
+
+<div>
+  <%= link_to t('buttons.show') , @severity %> |
+  <%= link_to t('buttons.back') , severities_path %>
+</div>
+
+<br/>
+

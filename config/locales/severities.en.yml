@@ -1,0 +1,5 @@
+en:
+  severities:
+    model_name: Severity
+    description: Description
+    created_at: Creation Date

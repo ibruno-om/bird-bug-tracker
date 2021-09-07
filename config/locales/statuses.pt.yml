@@ -1,0 +1,5 @@
+en:
+  statuses:
+    model_name: Status
+    description: Descrição
+    created_at: Data de Criação

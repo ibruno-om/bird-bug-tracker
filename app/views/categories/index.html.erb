@@ -1,0 +1,52 @@
+<p id="notice"><%= notice %></p>
+
+<% content_for :title, t('categories.model_name') %>
+
+<div class="dataTables_wrapper dt-bootstrap4">  
+  <div calss="row">
+    <div calss="col-sm-12">      
+      <table id="category_table" class="table table-bordered table-striped dtr-inline" role="grid">
+        <thead>
+          <tr role="row">
+            <th width="3%">#</th>
+            <th class="sorting"> <%= t('categories.description') %> </th>        
+            <th class="sorting text-center" width="11%"> <%= t('categories.created_at') %> </th>
+            <th class="text-center" width="10%"> <%= t('others.actions') %> </th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @categories.each do |category| %>
+            <tr>
+              <td><%= category.id %></td>
+              <td><%= category.description %></td>      
+              <td><%= l(category.created_at) %></td>
+
+              <td>
+                <div class="text-center">
+                  <%= link_to category, class: "btn btn-outline-secondary btn-sm" do %>                    
+                      <span class="fa fa-search" />                      
+                  <% end %>
+
+                  <%= link_to edit_category_path(category), class: "btn btn-outline-secondary btn-sm" do %>                    
+                      <span class="fa fa-pen" />
+                  <% end %>
+
+                  <%= link_to category, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-secondary btn-sm" do %>
+                      <span class="fa fa-trash" />                         
+                  <% end %>
+                </div>
+              </td>
+              
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div>
+  <%= link_to t('buttons.new') + ' ' + t('categories.model_name'), new_category_path, class: "btn btn-primary"  %>
+</div>
+              

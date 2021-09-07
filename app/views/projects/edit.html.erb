@@ -1,0 +1,11 @@
+<h1> <%= t('others.editing') + ' ' + t('projects.model_name') %> </h1>
+
+<%= render 'form', project: @project %>
+
+<div>
+  <%= link_to t('buttons.show') , @project %> |
+  <%= link_to t('buttons.back') , projects_path %>
+</div>
+
+<br/>
+

@@ -1,0 +1,8 @@
+en:
+  projects:
+    model_name: Projeto
+    name: Nome
+    description: Descrição
+    enable: Habilitado
+    visibility: Visibilidade
+    created_at: Data de Criação

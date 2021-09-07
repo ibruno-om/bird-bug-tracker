@@ -1,0 +1,11 @@
+<h1> <%= t('others.editing') + ' ' + t('priorities.model_name') %> </h1>
+
+<%= render 'form', priority: @priority %>
+
+<div>
+  <%= link_to t('buttons.show') , @priority %> |
+  <%= link_to t('buttons.back') , priorities_path %>
+</div>
+
+<br/>
+

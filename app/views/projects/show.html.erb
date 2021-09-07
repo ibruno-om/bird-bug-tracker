@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<table class="table">
+  <tr>
+    <td colspan="5">
+      <b><%= t('projects.name') %>:</b>
+      <%= @project.name %>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="5">
+      <b><%= t('projects.description') %>:</b>
+      <%= @project.description %>
+    </td>
+  </tr>
+</table>
+
+<div>
+  <%= link_to t('buttons.edit') , edit_project_path(@project)  %> |
+  <%= link_to t('buttons.back') , projects_path %>
+</div>
+
+<br/>

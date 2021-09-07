@@ -1,0 +1,41 @@
+<div class="card card-primary">
+  <%= form_with(model: project) do |form| %>
+    <div class="card-body">    
+      <% if project.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(project.errors.count, "error") %> prohibited this project from being saved:</h2>
+
+          <ul>
+            <% project.errors.each do |error| %>
+              <li><%= error.full_message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div class="row">
+        <div class="form-group col-md-8">
+          <%= form.label t('projects.name') %>
+          <%= form.text_field :name, class: "form-control" %>
+        </div>
+
+        <div class="form-group col-md-4">
+          <%= form.label t('projects.visibility') %>
+          <%= form.select :visibility, [["Public", 0], ["Private", 1]], {}, class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="form-group col-md-12">
+          <%= form.label t('projects.description') %>
+          <%= form.text_area :description, class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= form.submit t('buttons.save') , class: "btn btn-primary" %>
+      </div>
+
+    </div>
+  <% end %>
+</div>

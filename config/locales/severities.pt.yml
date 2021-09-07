@@ -1,0 +1,5 @@
+en:
+  severities:
+    model_name: Gravidade
+    description: Descrição
+    created_at: Data de Criação

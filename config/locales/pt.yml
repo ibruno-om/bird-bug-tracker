@@ -11,6 +11,8 @@ pt:
     actions: Ações
     editing: Editando
     creating: Criando
+  sidebar_menu:
+    basic_tables: Tabelas Basicas
   date:
     abbr_day_names:
     - dom

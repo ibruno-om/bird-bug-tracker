@@ -1,0 +1,5 @@
+en:
+  reproducibilities:
+    model_name: Reproducibility
+    description: Description
+    created_at: Creation Date

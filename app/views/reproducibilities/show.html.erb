@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<table class="table">
+  <tr>
+    <td colspan="5">
+      <b><%= t('reproducibilities.description') %>:</b>
+      <%= @reproducibility.description %>
+    </td>
+  </tr>
+</table>
+
+<div>
+  <%= link_to t('buttons.edit') , edit_reproducibility_path(@reproducibility)  %> |
+  <%= link_to t('buttons.back') , reproducibilities_path %>
+</div>
+
+<br/>
