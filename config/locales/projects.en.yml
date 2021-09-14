@@ -6,3 +6,7 @@ en:
     enable: Enable
     visibility: Visibility
     created_at: Creation Date
+    enums:
+      visibilities:
+        public_view: Public
+        private_view: Private

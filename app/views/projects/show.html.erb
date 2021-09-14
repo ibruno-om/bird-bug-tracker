@@ -2,13 +2,21 @@
 
 <table class="table">
   <tr>
-    <td colspan="5">
+    <td>
       <b><%= t('projects.name') %>:</b>
       <%= @project.name %>
     </td>
+    <td>
+      <b><%= t('projects.visibility') %>:</b>
+      <%= enum_l(@project, :visibility) %>
+    </td>
+    <td>
+      <b><%= t('projects.enable') %>:</b>
+      <%= @project.enable%>
+    </td>
   </tr>
   <tr>
-    <td colspan="5">
+    <td colspan="3">
       <b><%= t('projects.description') %>:</b>
       <%= @project.description %>
     </td>
