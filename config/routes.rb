@@ -3,10 +3,11 @@
 Rails.application.routes.draw do
   root 'issues#index'
 
+  devise_for :users, controllers: { sessions: 'users/sessions' }
+
   resources :projects
   resources :categories
   resources :access_levels
-  devise_for :users
   resources :reproducibilities
   resources :severities
   resources :priorities
