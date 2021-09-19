@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<% content_for :title, t('projects.model_name') %>
+<% content_for :title, translate_model(Project) %>
 
 <div class="dataTables_wrapper dt-bootstrap4">  
   <div calss="row">
@@ -9,9 +9,10 @@
         <thead>
           <tr role="row">
             <th width="3%">#</th>
-            <th class="sorting"> <%= t('projects.name') %> </th>  
-            <th class="sorting"> <%= t('projects.description') %> </th>        
-            <th class="sorting text-center" width="11%"> <%= t('projects.created_at') %> </th>
+            <th class="sorting"> <%= translate_attribute(Project, :name) %> </th>  
+            <th class="sorting"> <%= translate_attribute(Project, :description) %> </th> 
+            <th class="sorting" width="10%"> <%= translate_attribute(Project, :visibility) %> </th>       
+            <th class="sorting text-center" width="11%"> <%= translate_attribute(Project, :created_at) %> </th>
             <th class="text-center" width="10%"> <%= t('others.actions') %> </th>
           </tr>
         </thead>
@@ -21,7 +22,8 @@
             <tr>
               <td><%= project.id %></td>
               <td><%= project.name %></td>  
-              <td><%= project.description %></td>      
+              <td><%= project.description %></td>   
+              <td><%= enum_l(project, :visibility)%></td>    
               <td><%= l(project.created_at) %></td>
 
               <td>
@@ -49,6 +51,6 @@
 </div>
 
 <div>
-  <%= link_to t('buttons.new') + ' ' + t('projects.model_name'), new_project_path, class: "btn btn-primary"  %>
+  <%= link_to t('buttons.new') + ' ' + translate_model(Project), new_project_path, class: "btn btn-primary"  %>
 </div>
               

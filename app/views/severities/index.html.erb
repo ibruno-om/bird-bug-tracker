@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<% content_for :title, t('severities.model_name') %>
+<% content_for :title, translate_model(Severity) %>
 
 <div class="dataTables_wrapper dt-bootstrap4">  
   <div calss="row">
@@ -9,8 +9,8 @@
         <thead>
           <tr role="row">
             <th width="3%">#</th>
-            <th class="sorting"> <%= t('severities.description') %> </th>        
-            <th class="sorting text-center" width="11%"> <%= t('severities.created_at') %> </th>
+            <th class="sorting"> <%= translate_attribute(Severity, :description) %> </th>        
+            <th class="sorting text-center" width="11%"> <%= translate_attribute(Severity, :created_at) %> </th>
             <th class="text-center" width="10%"> <%= t('others.actions') %> </th>
           </tr>
         </thead>
@@ -47,6 +47,6 @@
 </div>
 
 <div>
-  <%= link_to t('buttons.new') + ' ' + t('severities.model_name'), new_severity_path, class: "btn btn-primary"  %>
+  <%= link_to t('buttons.new') + ' ' + translate_model(Severity), new_severity_path, class: "btn btn-primary"  %>
 </div>
               

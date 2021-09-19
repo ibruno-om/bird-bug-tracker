@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<% content_for :title, t('reproducibilities.model_name') %>
+<% content_for :title, translate_model(Reproducibility) %>
 
 <div class="dataTables_wrapper dt-bootstrap4">  
   <div calss="row">
@@ -9,8 +9,8 @@
         <thead>
           <tr role="row">
             <th width="3%">#</th>
-            <th class="sorting"> <%= t('reproducibilities.description') %> </th>        
-            <th class="sorting text-center" width="11%"> <%= t('reproducibilities.created_at') %> </th>
+            <th class="sorting"> <%= translate_attribute(Reproducibility, :description) %> </th>        
+            <th class="sorting text-center" width="11%"> <%= translate_attribute(Reproducibility, :created_at) %> </th>
             <th class="text-center" width="10%"> <%= t('others.actions') %> </th>
           </tr>
         </thead>
@@ -47,6 +47,6 @@
 </div>
 
 <div>
-  <%= link_to t('buttons.new') + ' ' + t('reproducibilities.model_name'), new_reproducibility_path, class: "btn btn-primary"  %>
+  <%= link_to t('buttons.new') + ' ' + translate_model(Reproducibility), new_reproducibility_path, class: "btn btn-primary"  %>
 </div>
               

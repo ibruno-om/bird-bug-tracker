@@ -1,0 +1,21 @@
+en:
+  activerecord:
+    models:
+      user: User
+    attributes:
+      user:
+        email: Email
+        password: Password
+        password_confirmation: Password Confirmation
+        password_current: Current Password   
+        remember_me: Remember me                    
+    messages:
+      user:
+        Cancel_account: Cancel My Account
+        signed_in: Signed in as 
+        you_profile: You Profile
+        sign_out: Sign Out
+        log_in: Log in
+        sign_up: Sign up
+        sign_start_session: Sign in to start your session
+        forgot_password: Forgot your password?

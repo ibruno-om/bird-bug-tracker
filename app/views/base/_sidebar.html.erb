@@ -8,6 +8,7 @@
     <!-- Sidebar -->
     <div class="sidebar">
       <!-- Sidebar user panel (optional) -->
+      <!--
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
           <%= image_tag "user2-160x160.jpg", class: "img-circle elevation-2", alt: "User Image" %>          
@@ -16,9 +17,10 @@
           <%= link_to(current_user&.name || 'Logar', destroy_user_session_path, method: :delete) %>
         </div>
       </div>
-
+      -->
+     
       <!-- SidebarSearch Form -->
-      <div class="form-inline">
+      <div class="form-inline mt-3">
         <div class="input-group" data-widget="sidebar-search">
           <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
           <div class="input-group-append">
@@ -38,7 +40,7 @@
             <a href="/issues" class="nav-link">
               <i class="far fa-circle nav-icon"></i>
               <p>
-                <%= t('issues.model_name') %>
+                <%= translate_model(Issue) %>
               </p>
             </a>
           </li>
@@ -46,7 +48,7 @@
             <a href="/projects" class="nav-link">
               <i class="far fa-circle nav-icon"></i>
               <p>
-                <%= t('projects.model_name') %>
+                <%= translate_model(Project) %>
               </p>
             </a>
           </li>
@@ -63,7 +65,7 @@
                 <a href="/statuses" class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>
                   <p>
-                    <%= t('statuses.model_name') %>
+                    <%= translate_model(Status) %>
                   </p>
                 </a>
               </li>
@@ -71,7 +73,7 @@
                 <a href="/severities" class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>
                   <p>
-                    <%= t('severities.model_name') %>
+                    <%= translate_model(Severity) %>
                   </p>
                 </a>
               </li>
@@ -79,7 +81,7 @@
                 <a href="/reproducibilities" class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>
                   <p>
-                    <%= t('reproducibilities.model_name') %>
+                    <%= translate_model(Reproducibility) %>
                   </p>
                 </a>
               </li>
@@ -87,7 +89,7 @@
                 <a href="/priorities" class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>
                   <p>
-                    <%= t('priorities.model_name') %>
+                    <%= translate_model(Priority) %>
                   </p>
                 </a>
               </li>
@@ -95,7 +97,7 @@
                 <a href="/categories" class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>
                   <p>
-                    <%= t('categories.model_name') %>
+                    <%= translate_model(Category) %>
                   </p>
                 </a>
               </li>

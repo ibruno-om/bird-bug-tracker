@@ -1,16 +1,24 @@
 en:
-  issues:
-    model_name: Issue
-    title: Title
-    description: Description
-    visibility: Visibility
-    submited_date: Submited Date
-    additional_information: Additional Information
-    product_version: Product Version
-    status: Status
-    priority: Priority
-    severity: Severity
-    reproducibility: Reproducibility
-    category: Category
-    creator_user: Creator User
-    assigned_user: Assigned User
+  activerecord:
+    models:
+      issue: Issue
+    attributes:
+      issue:
+        title: Title
+        description: Description
+        visibility: Visibility
+        submited_date: Submited Date
+        additional_information: Additional Information
+        product_version: Product Version
+        status: Status
+        priority: Priority
+        severity: Severity
+        reproducibility: Reproducibility
+        category: Category
+        creator_user: Creator User
+        assigned_user: Assigned User
+    enums:
+      issue:
+        visibilities:
+          public_view: Public
+          private_view: Private

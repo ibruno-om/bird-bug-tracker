@@ -1,5 +1,8 @@
 en:
-  reproducibilities:
-    model_name: Reproducibility
-    description: Description
-    created_at: Creation Date
+  activerecord:
+    models:
+      reproducibility: Reproducibility
+    attributes:
+      reproducibility:
+        description: Description
+        created_at: Creation Date

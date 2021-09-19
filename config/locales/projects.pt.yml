@@ -1,12 +1,16 @@
 pt:
-  projects:
-    model_name: Projeto
-    name: Nome
-    description: Descrição
-    enable: Habilitado
-    visibility: Visibilidade
-    created_at: Data de Criação
+  activerecord:
+    models:
+      project: Projeto
+    attributes:
+      project:
+        name: Nome
+        description: Descrição
+        enable: Habilitado
+        visibility: Visibilidade
+        created_at: Data de Criação
     enums:
-      visibilities:
-        public_view: Publico
-        private_view: Privado
+      project:
+        visibilities:
+          public_view: Publico
+          private_view: Privado

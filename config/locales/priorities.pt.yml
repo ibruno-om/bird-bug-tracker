@@ -1,5 +1,8 @@
 pt:
-  priorities:
-    model_name: Prioridade
-    description: Descrição
-    created_at: Data de Criação
+  activerecord:
+    models:
+      priority: Prioridade
+    attributes:
+      priority:
+        description: Descrição
+        created_at: Data de Criação

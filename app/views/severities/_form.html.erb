@@ -15,7 +15,7 @@
 
       <div class="row">
         <div class="form-group col-md-12">
-          <%= form.label t('severities.description') %>
+          <%= form.label translate_attribute(Severity, :description) %>
           <%= form.text_area :description, class: "form-control" %>
         </div>
       </div>

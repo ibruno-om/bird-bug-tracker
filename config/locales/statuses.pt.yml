@@ -1,5 +1,8 @@
 pt:
-  statuses:
-    model_name: Status
-    description: Descrição
-    created_at: Data de Criação
+  activerecord:
+    models:
+      status: Status
+    attributes:
+      status:
+        description: Descrição
+        created_at: Data de Criação

@@ -1,5 +1,8 @@
 pt:
-  severities:
-    model_name: Gravidade
-    description: Descrição
-    created_at: Data de Criação
+  activerecord:
+    models:
+      severity: Gravidade
+    attributes:
+      severity:
+        description: Descrição
+        created_at: Data de Criação

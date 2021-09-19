@@ -1,5 +1,8 @@
 en:
-  categories:
-    model_name: Category
-    description: Description
-    created_at: Creation Date
+  activerecord:
+    models:
+      category: Category
+    attributes:
+      category:
+        description: Description
+        created_at: Creation Date

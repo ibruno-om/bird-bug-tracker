@@ -1,12 +1,16 @@
 en:
-  projects:
-    model_name: Project
-    name: Name
-    description: Description
-    enable: Enable
-    visibility: Visibility
-    created_at: Creation Date
+  activerecord:
+    models:
+      project: Project
+    attributes:
+      project:
+        name: Name
+        description: Description
+        enable: Enable
+        visibility: Visibility
+        created_at: Creation Date
     enums:
-      visibilities:
-        public_view: Public
-        private_view: Private
+      project:
+        visibilities:
+          public_view: Public
+          private_view: Private

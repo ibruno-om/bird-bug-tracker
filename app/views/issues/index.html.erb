@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<% content_for :title, t('issues.model_name') %>
+<% content_for :title, translate_model(Issue) %>
 
 <div class="dataTables_wrapper dt-bootstrap4">  
   <div calss="row">
@@ -9,13 +9,13 @@
         <thead>
           <tr role="row">
             <th width="3%">#</th>
-            <th class="sorting"> <%= t('issues.title') %> </th>
-            <th class="sorting" width="10%"> <%= t('issues.creator_user') %> </th>
-            <th class="sorting" width="10%"> <%= t('issues.assigned_user') %> </th>
-            <th class="sorting" width="10%"> <%= t('issues.category') %> </th>
-            <th class="sorting" width="10%"> <%= t('issues.severity') %> </th>
-            <th class="sorting" width="10%"> <%= t('issues.status') %> </th>            
-            <th class="sorting text-center" width="11%"> <%= t('issues.submited_date') %> </th>
+            <th class="sorting"> <%= t('.title') %> </th>
+            <th class="sorting" width="10%"> <%= translate_attribute(Issue, :creator_user) %> </th>
+            <th class="sorting" width="10%"> <%= translate_attribute(Issue, :assigned_user) %> </th>
+            <th class="sorting" width="10%"> <%= translate_attribute(Issue, :category) %> </th>
+            <th class="sorting" width="10%"> <%= translate_attribute(Issue, :severity) %> </th>
+            <th class="sorting" width="10%"> <%= translate_attribute(Issue, :status) %> </th>            
+            <th class="sorting text-center" width="11%"> <%= translate_attribute(Issue, :submited_date) %> </th>
             <th class="text-center" width="10%"> <%= t('others.actions') %> </th>
           </tr>
         </thead>
@@ -57,6 +57,6 @@
 </div>
 
 <div>
-  <%= link_to t('buttons.new') + ' ' + t('issues.model_name'), new_issue_path, class: "btn btn-primary"  %>
+  <%= link_to t('buttons.new') + ' ' + translate_model(Issue), new_issue_path, class: "btn btn-primary"  %>
 </div>
               

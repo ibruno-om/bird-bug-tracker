@@ -1,5 +1,8 @@
 pt:
-  reproducibilities:
-    model_name: Frequencia
-    description: Descrição
-    created_at: Data de Criação
+  activerecord:
+    models:
+      reproducibility: Frequencia
+    attributes:
+      reproducibility:
+        description: Descrição
+        created_at: Data de Criação

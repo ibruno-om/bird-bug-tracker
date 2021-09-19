@@ -10,4 +10,6 @@ class Issue < ApplicationRecord
   belongs_to :assigned_user, class_name: 'User', foreign_key: 'assigned_user_id', optional: true
 
   validates :title, :description, :visibility, :submited_date, presence: true
+
+  enum visibility: { public_view: 0, private_view: 1 }
 end

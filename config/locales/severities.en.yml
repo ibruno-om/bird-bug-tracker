@@ -1,5 +1,8 @@
 en:
-  severities:
-    model_name: Severity
-    description: Description
-    created_at: Creation Date
+  activerecord:
+    models:
+      severity: Severity
+    attributes:
+      severity:
+        description: Description
+        created_at: Creation Date

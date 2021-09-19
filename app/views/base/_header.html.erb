@@ -14,29 +14,11 @@
 
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
-      <!-- Navbar Search -->
-      <li class="nav-item">
-        <a class="nav-link" data-widget="navbar-search" href="#" role="button">
-          <i class="fas fa-search"></i>
-        </a>
-        <div class="navbar-search-block">
-          <form class="form-inline">
-            <div class="input-group input-group-sm">
-              <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
-              <div class="input-group-append">
-                <button class="btn btn-navbar" type="submit">
-                  <i class="fas fa-search"></i>
-                </button>
-                <button class="btn btn-navbar" type="button" data-widget="navbar-search">
-                  <i class="fas fa-times"></i>
-                </button>
-              </div>
-            </div>
-          </form>
-        </div>
-      </li>
 
+<%
+=begin %>
       <!-- Messages Dropdown Menu -->
+      
       <li class="nav-item dropdown">
         <a class="nav-link" data-toggle="dropdown" href="#">
           <i class="far fa-comments"></i>
@@ -46,7 +28,8 @@
           <a href="#" class="dropdown-item">
             <!-- Message Start -->
             <div class="media">
-              <%= image_tag "user1-128x128.jpg", alt: "User Avatar", class: "img-size-50 mr-3 img-circle" %>              
+              <%= image_tag "user1-128x128.jpg", alt: "User Avatar", class: "img-size-50 img-circle" %>              
+              <%= image_tag "user1-128x128.jpg", alt: "User Avatar", class: "img-size-50 mr-2 img-circle" %> 
               <div class="media-body">
                 <h3 class="dropdown-item-title">
                   Brad Diesel
@@ -121,15 +104,42 @@
           <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
         </div>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" data-widget="fullscreen" href="#" role="button">
-          <i class="fas fa-expand-arrows-alt"></i>
-        </a>
-      </li>
+
+      <!-- Control Sidebar -->
       <li class="nav-item">
         <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
           <i class="fas fa-th-large"></i>
         </a>
       </li>
+<%
+=end %>
+
+      <!-- Perfil Dropdown Menu -->
+      <% if current_user %>  
+        <li class="nav-item dropdown">
+          <a class="nav-link" data-toggle="dropdown" href="#">
+            <div class="image user-panel-bbt">
+              <%= image_tag "user2-160x160.jpg", class: "img-circle elevation-2", alt: "User Image" %>  
+              <i class="fas fa-caret-down"></i>
+            </div>
+          </a>
+          
+          <div class="dropdown-menu dropdown-menu-bbt dropdown-menu-right">
+            <span class="dropdown-header">
+              <%= translate_message(User, :signed_in) + ' ' %>
+              <b> <%= current_user&.name.capitalize %> </b>
+            </span>
+            <div class="dropdown-divider"></div>
+            <div class="info">
+              <%= link_to translate_message(User, :you_profile), edit_user_registration_path, class: "dropdown-item dropdown-footer" %>
+            </div>
+            <div class="dropdown-divider"></div>
+            <div class="info">
+              <%= link_to translate_message(User, :sign_out), destroy_user_session_path, method: :delete, class: "dropdown-item dropdown-footer" %>
+            </div>
+          </div>
+        </li>
+      <% end %>
+
     </ul>
   </nav>

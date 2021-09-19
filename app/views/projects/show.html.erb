@@ -3,21 +3,21 @@
 <table class="table">
   <tr>
     <td>
-      <b><%= t('projects.name') %>:</b>
+      <b><%= translate_attribute(Project, :name) %>:</b>
       <%= @project.name %>
     </td>
     <td>
-      <b><%= t('projects.visibility') %>:</b>
+      <b><%= translate_attribute(Project, :visibility) %>:</b>
       <%= enum_l(@project, :visibility) %>
     </td>
     <td>
-      <b><%= t('projects.enable') %>:</b>
+      <b><%= translate_attribute(Project, :enable) %>:</b>
       <%= @project.enable%>
     </td>
   </tr>
   <tr>
     <td colspan="3">
-      <b><%= t('projects.description') %>:</b>
+      <b><%= translate_attribute(Project, :description) %>:</b>
       <%= @project.description %>
     </td>
   </tr>

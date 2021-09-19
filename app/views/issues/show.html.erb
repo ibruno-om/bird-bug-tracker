@@ -3,63 +3,63 @@
 <table class="table">
   <tr>
     <td>
-      <b><%= t('issues.category') %>:</b>
+      <b><%= translate_attribute(Issue, :category) %>:</b>
       <%= @issue.category.description %>
     </td>
     <td>
-      <b><%= t('issues.status') %>:</b>
+      <b><%= translate_attribute(Issue, :status) %>:</b>
       <%= @issue.status.description %>
     </td>
     <td>
-      <b><%= t('issues.visibility') %>:</b>
-      <%= @issue.visibility %>
+      <b><%= translate_attribute(Issue, :visibility) %>:</b>
+      <%= enum_l(@issue, :visibility) %>
     </td>
     <td>
-      <b><%= t('issues.reproducibility') %>:</b>
+      <b><%= translate_attribute(Issue, :reproducibility) %>:</b>
       <%= @issue.reproducibility.description %>
     </td>
     <td>
-      <b><%= t('issues.severity') %>:</b>
+      <b><%= translate_attribute(Issue, :severity) %>:</b>
       <%= @issue.severity.description %>
     </td>
   </tr>
   <tr>
     <td>
-      <b><%= t('issues.priority') %>:</b>
+      <b><%= translate_attribute(Issue, :priority) %>:</b>
       <%= @issue.priority.description %>
     </td>
     <td>
-      <b><%= t('issues.creator_user') %>:</b>
+      <b><%= translate_attribute(Issue, :creator_user) %>:</b>
       <%= @issue.creator_user.name %>
     </td>
     <td>
-      <b><%= t('issues.assigned_user') %>:</b>
+      <b><%= translate_attribute(Issue, :assigned_user) %>:</b>
       <%= @issue.assigned_user.name if @issue.assigned_user %>
     </td>
     <td>
-      <b><%= t('issues.product_version') %>:</b>
+      <b><%= translate_attribute(Issue, :product_version) %>:</b>
       <%= @issue.product_version %>
     </td>
     <td>
-      <b><%= t('issues.submited_date') %>:</b>
+      <b><%= translate_attribute(Issue, :submited_date) %>:</b>
       <%= l(@issue.submited_date) %>
     </td>
   </tr>
   <tr>
     <td colspan="5">
-      <b><%= t('issues.title') %>:</b>
+      <b><%= translate_attribute(Issue, :title) %>:</b>
       <%= @issue.title %>
     </td>
   </tr>
   <tr>
     <td colspan="5">
-      <b><%= t('issues.description') %>:</b>
+      <b><%= translate_attribute(Issue, :description) %>:</b>
       <%= @issue.description %>
     </td>
   </tr>
   <tr>
     <td colspan="5">
-      <b><%= t('issues.additional_information') %>:</b>
+      <b><%= translate_attribute(Issue, :additional_information)%>:</b>
       <%= @issue.additional_information %>
     </td>
   </tr>

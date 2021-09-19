@@ -15,7 +15,7 @@
 
       <div class="row">
         <div class="form-group col-md-12">
-          <%= form.label t('reproducibilities.description') %>
+          <%= form.label translate_attribute(Reproducibility, :description) %>
           <%= form.text_area :description, class: "form-control" %>
         </div>
       </div>
