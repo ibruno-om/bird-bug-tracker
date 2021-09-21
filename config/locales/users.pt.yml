@@ -4,14 +4,17 @@ pt:
       user: Usuário
     attributes:
       user:
+        name: Nome
         email: Email
         password: Senha
         password_confirmation: Confirmação da Senha
         password_current: Sernha Atual
         remember_me: Lembre-se de mim
+        cancel_my_account: Cancelar minha conta
+        access_level: Nível de acesso
     messages:
       user:        
-        Cancel_account: Cancelar Conta
+        cancel_account: Cancelar Conta
         signed_in: Logado com
         you_profile: Seu Perfil
         sign_out: Deslogar
@@ -19,3 +22,6 @@ pt:
         sign_up: Cadastre-se
         sign_start_session: Faça login para iniciar sua sessão
         forgot_password: Esqueceu sua senha?
+        waiting_confirmation: Aguardando confirmação para
+        leave_blank_password: (deixe em branco se não quiser alterá-la)
+        password_confirm_changes: (senha atual para confirmar suas alterações)

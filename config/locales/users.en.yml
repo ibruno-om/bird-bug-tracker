@@ -4,14 +4,17 @@ en:
       user: User
     attributes:
       user:
+        name: Name
         email: Email
         password: Password
         password_confirmation: Password Confirmation
         password_current: Current Password   
-        remember_me: Remember me                    
+        remember_me: Remember me 
+        cancel_my_account: Cancel my account
+        access_level: Access Level
     messages:
       user:
-        Cancel_account: Cancel My Account
+        cancel_account: Cancel My Account
         signed_in: Signed in as 
         you_profile: You Profile
         sign_out: Sign Out
@@ -19,3 +22,6 @@ en:
         sign_up: Sign up
         sign_start_session: Sign in to start your session
         forgot_password: Forgot your password?
+        waiting_confirmation: Currently waiting confirmation for
+        leave_blank_password: (leave blank if you don't want to change it)
+        password_confirm_changes: (current password to confirm your changes)

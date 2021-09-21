@@ -7,6 +7,7 @@ pt:
     new_model: Novo %{model}
     save: Salvar
     back: Voltar
+    update: Atualizar
   others:
     actions: Ações
     editing: Editando

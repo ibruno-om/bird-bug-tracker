@@ -1,0 +1,52 @@
+<p id="notice"><%= notice %></p>
+
+<% content_for :title, translate_model(AccessLevel) %>
+
+<div class="dataTables_wrapper dt-bootstrap4">  
+  <div calss="row">
+    <div calss="col-sm-12">      
+      <table id="access_level_table" class="table table-bordered table-striped dtr-inline" role="grid">
+        <thead>
+          <tr role="row">
+            <th width="3%">#</th>
+            <th class="sorting"> <%= translate_attribute(AccessLevel, :description) %> </th>        
+            <th class="sorting text-center" width="11%"> <%= translate_attribute(AccessLevel, :created_at) %> </th>
+            <th class="text-center" width="10%"> <%= t('others.actions') %> </th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @access_levels.each do |access_level| %>
+            <tr>
+              <td><%= access_level.id %></td>
+              <td><%= access_level.description %></td>      
+              <td><%= l(access_level.created_at) %></td>
+
+              <td>
+                <div class="text-center">
+                  <%= link_to access_level, class: "btn btn-outline-secondary btn-sm" do %>                    
+                      <span class="fa fa-search" />                      
+                  <% end %>
+
+                  <%= link_to edit_access_level_path(access_level), class: "btn btn-outline-secondary btn-sm" do %>                    
+                      <span class="fa fa-pen" />
+                  <% end %>
+
+                  <%= link_to access_level, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-secondary btn-sm" do %>
+                      <span class="fa fa-trash" />                         
+                  <% end %>
+                </div>
+              </td>
+              
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div>
+  <%= link_to t('buttons.new') + ' ' + translate_model(AccessLevel), new_access_level_path, class: "btn btn-primary"  %>
+</div>
+              

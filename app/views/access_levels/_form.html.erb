@@ -1,0 +1,29 @@
+<div class="card card-primary">
+  <%= form_with(model: access_level) do |form| %>
+    <div class="card-body">    
+      <% if access_level.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(access_level.errors.count, "error") %> prohibited this access level from being saved:</h2>
+
+          <ul>
+            <% access_level.errors.each do |error| %>
+              <li><%= error.full_message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div class="row">
+        <div class="form-group col-md-12">
+          <%= form.label translate_attribute(AccessLevel, :description) %>
+          <%= form.text_area :description, class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= form.submit t('buttons.save') , class: "btn btn-primary" %>
+      </div>
+
+    </div>
+  <% end %>
+</div>

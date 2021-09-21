@@ -1,0 +1,7 @@
+<h1> <%=t('others.creating') + ' ' + translate_model(AccessLevel) %> </h1>
+
+<%= render 'form', access_level: @access_level %>
+
+<div>
+  <%= link_to t('buttons.back') , access_levels_path %>
+</div>

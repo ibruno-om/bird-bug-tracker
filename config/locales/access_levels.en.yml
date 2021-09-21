@@ -1,0 +1,8 @@
+en:
+  activerecord:
+    models:
+      access_level: Access Level
+    attributes:
+      access_level:
+        description: Description
+        created_at: Creation Date

@@ -38,6 +38,7 @@ en:
     new_model: New %{model}
     save: Save
     back: Back
+    update: Update
   others:
     actions: Actions
     editing: Editing
