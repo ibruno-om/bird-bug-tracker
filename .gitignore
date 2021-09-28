@@ -43,3 +43,8 @@
 yarn-debug.log*
 .yarn-integrity
 coverage
+
+# Env
+.env
+.env.test
+.env.development
