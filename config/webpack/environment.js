@@ -9,6 +9,7 @@ environment.plugins.append('Provide',
       jquery: 'jquery',
       'window.jQuery': 'jquery',
       Popper: ['popper.js', 'default'],
+      toastr: 'toastr',
     })
 )
 

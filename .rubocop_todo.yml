@@ -89,5 +89,8 @@ Style/SpecialGlobalVars:
 Layout/LineLength:
   Max: 198
 
+Style/SymbolArray:
+  Enabled: false
+
 AllCops:
     NewCops: enable

@@ -3,8 +3,6 @@
 // a relevant structure within app/javascript and only use these pack files to reference
 // that code so it'll be compiled.
 
-import 'bootstrap'
-
 import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
@@ -18,6 +16,7 @@ ActiveStorage.start()
 
 require('admin-lte');
 require('bootstrap');
+require('toastr');
 document.addEventListener("turbolinks:load", () => {
   $('[data-toggle="tooltip"]').tooltip()
   $('[data-toggle="popover"]').popover()
@@ -25,3 +24,4 @@ document.addEventListener("turbolinks:load", () => {
 
 window.jQuery = $;
 window.$ = $;
+window.toastr = toastr;

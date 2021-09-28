@@ -36,7 +36,7 @@
               </div>
             </div>
 
-            <%= render "base/flash_notices" %>
+            
             
             <div class="row">          
               <% if devise_mapping.rememberable? %>
@@ -57,6 +57,12 @@
           <% end %>
 
           <%= render "devise/shared/links" %>
+
+          <% if flash[:alert] %>
+            <script type="application/javascript">
+              toastr.warning('<%= flash[:alert] %>')
+            </script>
+          <% end %>
 
         </div>
       </div>
